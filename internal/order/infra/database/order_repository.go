@@ -1,6 +1,10 @@
 package database
 
-import "database/sql"
+import (
+	"database/sql"
+	
+	"github.com/dev-MarcosVinicius/golang-intensivo/internal/order/entity"
+)
 
 type OrderRepository struct {
 	Db *sql.DB
@@ -15,7 +19,6 @@ func (r *OrderRepository) Save(order *entity.Order) error {
 	if err != nil {
 		return err
 	}
-
 	_, err = stmt.Exec(order.ID, order.Price, order.Tax, order.FinalPrice)
 	if err != nil {
 		return err
