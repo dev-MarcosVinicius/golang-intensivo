@@ -2,7 +2,7 @@ package database
 
 import (
 	"database/sql"
-	
+
 	"github.com/dev-MarcosVinicius/golang-intensivo/internal/order/entity"
 )
 
