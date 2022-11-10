@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name:  gointensivo
+spec:
+  selector:
+    app:  gointensivo
+  ports:
+  - name:  name-of-the-port
+    port:  8080
+    targetPort:  8080
