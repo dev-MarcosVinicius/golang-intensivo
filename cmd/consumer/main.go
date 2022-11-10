@@ -4,10 +4,12 @@ import (
 	"database/sql"
 	"encoding/json"
 	"fmt"
+	"time"
 
 	"github.com/dev-MarcosVinicius/golang-intensivo/internal/order/infra/database"
 	"github.com/dev-MarcosVinicius/golang-intensivo/internal/order/usecase"
 	"github.com/dev-MarcosVinicius/golang-intensivo/pkg/rabbitmq"
+	_ "github.com/mattn/go-sqlite3"
 	amqp "github.com/rabbitmq/amqp091-go"
 )
 
@@ -42,5 +44,6 @@ func main() {
 		}
 		msg.Ack(false)
 		fmt.Println(outPutDTO)
+		time.Sleep(500 * time.Millisecond)
 	}
 }
